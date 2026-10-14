@@ -1,0 +1,97 @@
+<div class="page-view" id="view-start-project">
+<div class="wizard-container">
+<div class="wizard-header" style="text-align: center; margin-bottom: 48px;">
+<div class="font-code text-muted" style="margin-bottom: 16px;">wizard.init()</div>
+<h2>Project Discovery</h2>
+<p class="text-secondary">Configure your environment variables so we can architect the right solution.</p>
+</div>
+<div class="wizard-progress" id="progress-container">
+<div class="progress-bar active"></div><div class="progress-bar"></div><div class="progress-bar"></div>
+<div class="progress-bar"></div><div class="progress-bar"></div><div class="progress-bar"></div>
+</div>
+<form id="wizard-form" onsubmit="return false;">
+<!-- Step 1: Environment -->
+<div class="wizard-step active" data-step="1">
+<h3 class="font-code text-blue" style="margin-bottom: 24px;">[01] Environment Setup</h3>
+<div class="form-group"><label class="form-label">Business Name <span class="text-red">*</span></label><input class="form-control" id="w-name" placeholder="Acme Corp" required="" type="text"/></div>
+<div class="form-group">
+<label class="form-label">Industry <span class="text-red">*</span></label>
+<select class="form-control" id="w-industry" required="">
+<option value="">Select Industry...</option>
+<option value="Hospitality">Hospitality &amp; Tourism</option>
+<option value="Retail">Retail &amp; E-commerce</option>
+<option value="Professional Services">Professional Services</option>
+<option value="Distribution">Distribution &amp; Operations</option>
+</select>
+</div>
+</div>
+<!-- Step 2: Diagnostics -->
+<div class="wizard-step" data-step="2">
+<h3 class="font-code text-blue" style="margin-bottom: 24px;">[02] Diagnostics</h3>
+<div class="form-group">
+<label class="form-label">What operational problem are we solving? <span class="text-red">*</span></label>
+<p class="font-code text-muted" style="font-size:0.75rem; margin-bottom:12px;">e.g., "Our sales team loses track of leads because we use spreadsheets."</p>
+<textarea class="form-control" id="w-problem" placeholder="Describe the friction points..." required="" rows="5"></textarea>
+</div>
+</div>
+<!-- Step 3: Architecture -->
+<div class="wizard-step" data-step="3">
+<h3 class="font-code text-blue" style="margin-bottom: 24px;">[03] Target Architecture</h3>
+<div class="checkbox-grid form-group">
+<label class="checkbox-card" onclick="this.classList.toggle('selected')"><input name="solution" type="checkbox" value="Corporate Website"/><div><div style="font-weight: 500;">Corporate Website</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.web_dev</div></div></label>
+<label class="checkbox-card" onclick="this.classList.toggle('selected')"><input name="solution" type="checkbox" value="Web Application"/><div><div style="font-weight: 500;">Web Application</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.web_app</div></div></label>
+<label class="checkbox-card" onclick="this.classList.toggle('selected')"><input name="solution" type="checkbox" value="CRM System"/><div><div style="font-weight: 500;">CRM System</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.crm</div></div></label>
+<label class="checkbox-card" onclick="this.classList.toggle('selected')"><input name="solution" type="checkbox" value="AI Integration"/><div><div style="font-weight: 500;">AI Integration</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.ai</div></div></label>
+</div>
+</div>
+<!-- Step 4: Dependencies -->
+<div class="wizard-step" data-step="4">
+<h3 class="font-code text-blue" style="margin-bottom: 24px;">[04] Dependencies &amp; Requirements</h3>
+<div class="form-group"><label class="form-label">Core Features Needed</label><textarea class="form-control" id="w-features" placeholder="e.g., User login, payment gateway..." rows="3"></textarea></div>
+</div>
+<!-- Step 5: Parameters -->
+<div class="wizard-step" data-step="5">
+<h3 class="font-code text-blue" style="margin-bottom: 24px;">[05] Project Parameters</h3>
+<div class="form-group">
+<label class="form-label">Estimated Budget Range</label>
+<select class="form-control" id="w-budget">
+<option value="TBD">To be discussed</option>
+<option value="&lt; $5k">Under $5,000</option>
+<option value="$5k - $15k">$5,000 - $15,000</option>
+<option value="$15k+">$15,000+</option>
+</select>
+</div>
+<div class="form-group"><label class="form-label">Contact Email <span class="text-red">*</span></label><input class="form-control" id="w-email" placeholder="you@company.com" required="" type="email"/></div>
+</div>
+<!-- Step 6: Compile -->
+<div class="wizard-step" data-step="6">
+<h3 class="font-code text-blue" style="margin-bottom: 24px;">[06] Compile &amp; Review</h3>
+<div class="ide-window" style="margin-bottom: 24px;">
+<div class="ide-header"><div class="mac-dots"><span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span></div><span class="font-code text-muted">payload.json</span></div>
+<div class="ide-body" id="review-content" style="color: var(--syntax-green); white-space: pre-wrap;">// Generating preview...</div>
+</div>
+</div>
+<!-- Step 7: Output -->
+<div class="wizard-step" data-step="7">
+<div style="text-align: center; margin-bottom: 32px;">
+<div class="step-node" style="margin: 0 auto 16px; border-color: var(--syntax-green); color: var(--syntax-green);">✓</div>
+<h3>Brief Compiled Successfully</h3>
+</div>
+<div class="ide-window" style="margin-bottom: 24px;">
+<div class="ide-header"><span class="font-code text-muted">project_brief.md</span></div>
+<div class="ide-body" id="brief-output" style="color: var(--text-primary); white-space: pre-wrap; height: 300px; overflow-y: auto;"></div>
+</div>
+<div style="display: flex; gap: 16px; justify-content: center;">
+<button class="btn btn-ghost" onclick="app.copyBrief()">Copy Brief</button>
+<button class="btn btn-primary" id="btn-deploy" onclick="app.submitInquiry()">Deploy Inquiry</button>
+</div>
+</div>
+<!-- Navigation Footer -->
+<div id="wizard-controls" style="display: flex; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+<button class="btn btn-ghost" id="btn-prev" onclick="wizard.prev()" style="display: none;" type="button">&lt; Back</button>
+<div style="flex:1"></div>
+<button class="btn btn-terminal" id="btn-next" onclick="wizard.next()" type="button">Next &gt;</button>
+</div>
+</form>
+</div>
+</div>
