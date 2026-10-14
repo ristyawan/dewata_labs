@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewata Labs | Digital Solutions for Your Business</title>
+    <meta name="description" content="We help businesses improve operations, connect systems, and unlock opportunities through high-performance web applications and practical AI.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter for Business Copy, JetBrains Mono for Code Aesthetics -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ================= HEADER (layouts/header.html) ================= -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <div class="logo" onclick="app.navigate('home')">
+                <div class="logo-box"></div> Dewata Labs
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a onclick="app.navigate('home')" data-route="home">Home</a>
+                <a onclick="app.navigate('services')" data-route="services">Services</a>
+                <a onclick="app.navigate('industries')" data-route="industries">Industries</a>
+                <a onclick="app.navigate('portfolio')" data-route="portfolio">Portfolio</a>
+                <a onclick="app.navigate('process')" data-route="process">Process</a>
+                <a onclick="app.navigate('about')" data-route="about">About</a>
+                <a onclick="app.navigate('contact')" data-route="contact">Contact</a>
+                <button class="btn btn-terminal" onclick="app.navigate('start-project')">
+                    <span class="text-blue">&gt;</span> Discuss Project
+                </button>
+            </nav>
+            <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('mobile-active')">≡</button>
+        </div>
+    </header>
+
+    <main id="app-root" style="flex: 1; display: flex; flex-direction: column;">
+        
+        <!-- ================= HOME PAGE (pages/index.html) ================= -->
+        <div id="view-home" class="page-view active">
+            
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-content">
+                        <h1>Digital Solutions Built Around Your Business</h1>
+                        <p>We help businesses improve operations, connect systems, and unlock opportunities through high-performance web applications and practical AI.</p>
+                        <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+                            <button class="btn btn-terminal" onclick="app.navigate('start-project')">
+                                <span class="text-blue">&gt;</span> Discuss Project
+                            </button>
+                            <button class="btn btn-ghost" onclick="app.navigate('services')">Explore Our Services</button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="ide-window">
+                            <div class="ide-header">
+                                <div class="mac-dots"><span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span></div>
+                                <div class="font-code text-muted" style="font-size: 0.75rem;">architecture.ts</div>
+                            </div>
+                            <div class="ide-body">
+<pre><code><span class="text-muted">// Initializing Digital Transformation</span>
+<span class="text-amber">import</span> { AppCore, Workflow, AI } <span class="text-amber">from</span> <span class="text-green">'@dewata/systems'</span>;
+
+<span class="text-blue">const</span> ClientSolution = <span class="text-blue">new</span> AppCore({
+  <span class="text-primary">architecture</span>: <span class="text-green">"Modular"</span>,
+  <span class="text-primary">scalability</span>: <span class="text-green">"Enterprise"</span>,
+  <span class="text-primary">security</span>: <span class="text-blue">true</span>
+});
+
+<span class="text-amber">await</span> ClientSolution.deploy([
+  <span class="text-blue">new</span> Workflow.Automator(),
+  <span class="text-blue">new</span> AI.InsightEngine(),
+]);
+
+<span class="text-muted">> System Operational. Awaiting requirements...</span><span style="animation: blink 1s infinite;">_</span></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container">
+                <div class="section-header">
+                    <h2>Resolve Operational Friction</h2>
+                    <p>Stop letting manual processes and disconnected data slow down your growth.</p>
+                </div>
+                <div class="challenge-grid">
+                    <div class="challenge-card" style="border: 1px solid rgba(239, 68, 68, 0.3);">
+                        <div class="font-code text-red" style="margin-bottom: 16px;">[SYS_ERR] The Status Quo</div>
+                        <ul style="color: var(--text-secondary); display: flex; flex-direction: column; gap: 12px;">
+                            <li>× Manual and repetitive data entry</li>
+                            <li>× Disconnected systems and spreadsheets</li>
+                            <li>× Limited visibility into business operations</li>
+                            <li>× Inefficient customer management</li>
+                        </ul>
+                    </div>
+                    <div class="challenge-card" style="border: 1px solid rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.02);">
+                        <div class="font-code text-green" style="margin-bottom: 16px;">[SYS_OK] Dewata Solution</div>
+                        <ul style="color: var(--text-primary); display: flex; flex-direction: column; gap: 12px;">
+                            <li>✓ Automated workflows and triggers</li>
+                            <li>✓ Unified API integrations & centralized data</li>
+                            <li>✓ Real-time custom analytics dashboards</li>
+                            <li>✓ Tailored CRM and AI integrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container" style="border-bottom: none;">
+                <div class="section-header">
+                    <h2>Core Capabilities</h2>
+                    <p>Engineered for performance, maintainability, and business impact.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" onclick="app.navigate('services')">
+                        <span class="tag-code"><span class="text-blue">sys</span>.web_app</span>
+                        <h3>Web Applications</h3>
+                        <p style="font-size: 0.95rem;">High-performance, secure web applications tailored to your operational workflows.</p>
+                    </div>
+                    <div class="service-card" onclick="app.navigate('services')">
+                        <span class="tag-code"><span class="text-blue">sys</span>.crm</span>
+                        <h3>CRM Systems</h3>
+                        <p style="font-size: 0.95rem;">Centralized platforms to track customers, inventory, and internal processes.</p>
+                    </div>
+                    <div class="service-card" onclick="app.navigate('services')">
+                        <span class="tag-code"><span class="text-blue">sys</span>.ai_integration</span>
+                        <h3>AI Integration</h3>
+                        <p style="font-size: 0.95rem;">Leverage practical machine learning to automate support and data analysis.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container">
+                <div class="section-header">
+                    <h2>Deployment Pipeline</h2>
+                    <p>A rigorous, structured approach to delivering digital transformation.</p>
+                </div>
+                <div class="pipeline">
+                    <div class="pipeline-step"><div class="step-node">01</div><h4>Discover</h4><p class="font-code text-muted" style="font-size: 0.75rem;">Requirements</p></div>
+                    <div class="pipeline-step"><div class="step-node">02</div><h4>Plan</h4><p class="font-code text-muted" style="font-size: 0.75rem;">Architecture</p></div>
+                    <div class="pipeline-step"><div class="step-node">03</div><h4>Build</h4><p class="font-code text-muted" style="font-size: 0.75rem;">Development</p></div>
+                    <div class="pipeline-step"><div class="step-node">04</div><h4>Test</h4><p class="font-code text-muted" style="font-size: 0.75rem;">QA & Security</p></div>
+                    <div class="pipeline-step"><div class="step-node">05</div><h4>Deploy</h4><p class="font-code text-muted" style="font-size: 0.75rem;">Release</p></div>
+                </div>
+            </section>
+            
+            <section style="background: var(--bg-surface); text-align: center; border-top: 1px solid var(--border-subtle);">
+                <div class="container">
+                    <h2 style="font-size: 3rem; margin-bottom: 24px;">Let's Compile Your Ideas.</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 40px; max-width: 600px; margin-inline: auto;">Tell us what your business needs. We'll help you define the right digital architecture.</p>
+                    <button class="btn btn-terminal" onclick="app.navigate('start-project')" style="font-size: 1.1rem; padding: 16px 32px;">
+                        <span class="text-blue">&gt;</span> Start Your Project
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= SERVICES PAGE (pages/services.html) ================= -->
+        <div id="view-services" class="page-view">
+            <section class="hero" style="min-height: 50vh; align-items: flex-end; padding-bottom: 60px;">
+                <div class="container">
+                    <div class="font-code text-muted" style="margin-bottom: 16px;">&lt;Services /&gt;</div>
+                    <h1 style="font-size: 3.5rem;">Technical Capabilities</h1>
+                    <p style="font-size: 1.2rem; max-width: 600px;">Detailed specifications of our digital solutions and technical implementations.</p>
+                </div>
+            </section>
+            <section class="container" style="padding-bottom: 100px;">
+                <div class="ide-window" style="margin-bottom: 40px;">
+                    <div class="ide-header"><span class="font-code text-muted">sys.web_app</span></div>
+                    <div class="ide-body">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 16px; color: var(--brand-blue);">Custom Web Application Development</h3>
+                        <p style="margin-bottom: 24px; max-width: 800px;">We architect and build complex, scalable web applications that solve specific operational bottlenecks. Unlike off-the-shelf software, our solutions are modeled exactly to your business logic.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Key Features</h4>
+                                <ul style="list-style: inside; color: var(--text-secondary);">
+                                    <li>Role-based access control (RBAC)</li>
+                                    <li>Real-time data synchronization</li>
+                                    <li>Custom analytics and reporting</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Architecture Approach</h4>
+                                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                    <span class="tag-code" style="margin:0;">Modular</span>
+                                    <span class="tag-code" style="margin:0;">API-First</span>
+                                    <span class="tag-code" style="margin:0;">Serverless</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-ghost" onclick="app.navigate('start-project')">Initialize Project</button>
+                    </div>
+                </div>
+                <p class="font-code text-muted" style="text-align: center;">/* Other services omitted for brief display */</p>
+            </section>
+        </div>
+
+        <!-- ================= PORTFOLIO PAGE (pages/portfolio.html) ================= -->
+        <div id="view-portfolio" class="page-view">
+            <section class="hero" style="min-height: 50vh; align-items: flex-end; padding-bottom: 60px;">
+                <div class="container">
+                    <div class="font-code text-muted" style="margin-bottom: 16px;">SELECT * FROM portfolio</div>
+                    <h1 style="font-size: 3.5rem;">Deployed Systems</h1>
+                    <p style="font-size: 1.2rem; max-width: 600px;">A showcase of our architectural designs, integrations, and web applications.</p>
+                </div>
+            </section>
+            <section class="container" style="padding-bottom: 100px;">
+                <div class="services-grid">
+                    <!-- Project 1 -->
+                    <div class="ide-window">
+                        <div class="ide-header" style="justify-content: space-between;">
+                            <div class="mac-dots"><span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span></div>
+                            <span class="text-green font-code" style="font-size: 0.75rem;">&lt;Deployed/&gt;</span>
+                        </div>
+                        <div style="height: 180px; background: var(--bg-terminal); display: grid; place-items: center; border-bottom: 1px solid var(--border-subtle); padding: 24px;">
+                            <span class="font-code text-muted">[ Dashboard UI Mockup ]</span>
+                        </div>
+                        <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+                            <h3 style="margin-bottom: 8px; font-size: 1.1rem;">Logistics CRM</h3>
+                            <p style="font-size: 0.85rem; margin-bottom: 16px; flex: 1; color: var(--text-secondary);">Custom distribution dashboard with real-time inventory tracking and automated driver dispatching.</p>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <span class="tag-code" style="margin:0; background: transparent;">React</span>
+                                <span class="tag-code" style="margin:0; background: transparent;">Supabase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= CONTENT PAGES (industries, about, process) ================= -->
+        <div id="view-industries" class="page-view">
+            <section class="container" style="padding-top: calc(var(--nav-height) + 80px);">
+                <div class="section-header"><h2>Industries Served</h2><p>Tailored digital solutions for specific sector challenges.</p></div>
+                <div class="ide-window"><div class="ide-body"><p>Content modules for Hospitality, Retail, Professional Services, and Distribution.</p></div></div>
+            </section>
+        </div>
+        
+        <div id="view-process" class="page-view">
+            <section class="container" style="padding-top: calc(var(--nav-height) + 80px);">
+                <div class="section-header"><h2>Our Process</h2><p>From Discovery to Deployment.</p></div>
+                <div class="ide-window"><div class="ide-body"><p>Detailed breakdown of the 6-step project lifecycle.</p></div></div>
+            </section>
+        </div>
+
+        <div id="view-about" class="page-view">
+            <section class="container" style="padding-top: calc(var(--nav-height) + 80px);">
+                <div class="section-header">
+                    <h2>Technology Philosophy</h2>
+                    <p>Boardroom strategy meets terminal execution.</p>
+                </div>
+                <div style="max-width: 800px; color: var(--text-secondary);">
+                    <p style="margin-bottom: 24px;">At Dewata Labs, we believe that software should solve business problems, not create new technical debt. We build systems that are modular, maintainable, and strictly aligned with operational goals.</p>
+                    <p style="margin-bottom: 24px;">We favor native web standards, robust architectures, and clear communication over fleeting technical trends. Our commitment is to deliver digital assets that perform reliably and scale securely.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= CONTACT PAGE (pages/contact.html) ================= -->
+        <div id="view-contact" class="page-view">
+            <section class="container" style="padding-top: calc(var(--nav-height) + 80px);">
+                <div class="section-header">
+                    <h2>System Gateway</h2>
+                    <p>Establish a secure communication channel with our technical team.</p>
+                </div>
+                <div style="max-width: 600px;">
+                    <form id="contact-form" onsubmit="app.submitContact(event)">
+                        <div class="form-group">
+                            <label class="form-label font-code text-muted">name</label>
+                            <input type="text" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label font-code text-muted">business_email</label>
+                            <input type="email" class="form-control" required placeholder="john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label font-code text-muted">project_description</label>
+                            <textarea class="form-control" rows="5" required placeholder="Briefly describe your requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Execute POST Request</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= DISCOVERY WIZARD (pages/start-project.html) ================= -->
+        <div id="view-start-project" class="page-view">
+            <div class="wizard-container">
+                <div class="wizard-header" style="text-align: center; margin-bottom: 48px;">
+                    <div class="font-code text-muted" style="margin-bottom: 16px;">wizard.init()</div>
+                    <h2>Project Discovery</h2>
+                    <p class="text-secondary">Configure your environment variables so we can architect the right solution.</p>
+                </div>
+
+                <div class="wizard-progress" id="progress-container">
+                    <div class="progress-bar active"></div><div class="progress-bar"></div><div class="progress-bar"></div>
+                    <div class="progress-bar"></div><div class="progress-bar"></div><div class="progress-bar"></div>
+                </div>
+
+                <form id="wizard-form" onsubmit="return false;">
+                    
+                    <!-- Step 1: Environment -->
+                    <div class="wizard-step active" data-step="1">
+                        <h3 class="font-code text-blue" style="margin-bottom: 24px;">[01] Environment Setup</h3>
+                        <div class="form-group"><label class="form-label">Business Name <span class="text-red">*</span></label><input type="text" id="w-name" class="form-control" placeholder="Acme Corp" required></div>
+                        <div class="form-group">
+                            <label class="form-label">Industry <span class="text-red">*</span></label>
+                            <select id="w-industry" class="form-control" required>
+                                <option value="">Select Industry...</option>
+                                <option value="Hospitality">Hospitality & Tourism</option>
+                                <option value="Retail">Retail & E-commerce</option>
+                                <option value="Professional Services">Professional Services</option>
+                                <option value="Distribution">Distribution & Operations</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Diagnostics -->
+                    <div class="wizard-step" data-step="2">
+                        <h3 class="font-code text-blue" style="margin-bottom: 24px;">[02] Diagnostics</h3>
+                        <div class="form-group">
+                            <label class="form-label">What operational problem are we solving? <span class="text-red">*</span></label>
+                            <p class="font-code text-muted" style="font-size:0.75rem; margin-bottom:12px;">e.g., "Our sales team loses track of leads because we use spreadsheets."</p>
+                            <textarea id="w-problem" class="form-control" rows="5" required placeholder="Describe the friction points..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Architecture -->
+                    <div class="wizard-step" data-step="3">
+                        <h3 class="font-code text-blue" style="margin-bottom: 24px;">[03] Target Architecture</h3>
+                        <div class="checkbox-grid form-group">
+                            <label class="checkbox-card" onclick="this.classList.toggle('selected')"><input type="checkbox" name="solution" value="Corporate Website"><div><div style="font-weight: 500;">Corporate Website</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.web_dev</div></div></label>
+                            <label class="checkbox-card" onclick="this.classList.toggle('selected')"><input type="checkbox" name="solution" value="Web Application"><div><div style="font-weight: 500;">Web Application</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.web_app</div></div></label>
+                            <label class="checkbox-card" onclick="this.classList.toggle('selected')"><input type="checkbox" name="solution" value="CRM System"><div><div style="font-weight: 500;">CRM System</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.crm</div></div></label>
+                            <label class="checkbox-card" onclick="this.classList.toggle('selected')"><input type="checkbox" name="solution" value="AI Integration"><div><div style="font-weight: 500;">AI Integration</div><div class="font-code text-muted" style="font-size: 0.75rem;">sys.ai</div></div></label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Dependencies -->
+                    <div class="wizard-step" data-step="4">
+                        <h3 class="font-code text-blue" style="margin-bottom: 24px;">[04] Dependencies & Requirements</h3>
+                        <div class="form-group"><label class="form-label">Core Features Needed</label><textarea id="w-features" class="form-control" rows="3" placeholder="e.g., User login, payment gateway..."></textarea></div>
+                    </div>
+
+                    <!-- Step 5: Parameters -->
+                    <div class="wizard-step" data-step="5">
+                        <h3 class="font-code text-blue" style="margin-bottom: 24px;">[05] Project Parameters</h3>
+                        <div class="form-group">
+                            <label class="form-label">Estimated Budget Range</label>
+                            <select id="w-budget" class="form-control">
+                                <option value="TBD">To be discussed</option>
+                                <option value="< $5k">Under $5,000</option>
+                                <option value="$5k - $15k">$5,000 - $15,000</option>
+                                <option value="$15k+">$15,000+</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label class="form-label">Contact Email <span class="text-red">*</span></label><input type="email" id="w-email" class="form-control" placeholder="you@company.com" required></div>
+                    </div>
+
+                    <!-- Step 6: Compile -->
+                    <div class="wizard-step" data-step="6">
+                        <h3 class="font-code text-blue" style="margin-bottom: 24px;">[06] Compile & Review</h3>
+                        <div class="ide-window" style="margin-bottom: 24px;">
+                            <div class="ide-header"><div class="mac-dots"><span class="mac-dot r"></span><span class="mac-dot y"></span><span class="mac-dot g"></span></div><span class="font-code text-muted">payload.json</span></div>
+                            <div class="ide-body" id="review-content" style="color: var(--syntax-green); white-space: pre-wrap;">// Generating preview...</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Output -->
+                    <div class="wizard-step" data-step="7">
+                        <div style="text-align: center; margin-bottom: 32px;">
+                            <div class="step-node" style="margin: 0 auto 16px; border-color: var(--syntax-green); color: var(--syntax-green);">✓</div>
+                            <h3>Brief Compiled Successfully</h3>
+                        </div>
+                        <div class="ide-window" style="margin-bottom: 24px;">
+                            <div class="ide-header"><span class="font-code text-muted">project_brief.md</span></div>
+                            <div class="ide-body" id="brief-output" style="color: var(--text-primary); white-space: pre-wrap; height: 300px; overflow-y: auto;"></div>
+                        </div>
+                        <div style="display: flex; gap: 16px; justify-content: center;">
+                            <button class="btn btn-ghost" onclick="app.copyBrief()">Copy Brief</button>
+                            <button class="btn btn-primary" onclick="app.submitInquiry()" id="btn-deploy">Deploy Inquiry</button>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Footer -->
+                    <div style="display: flex; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-subtle);" id="wizard-controls">
+                        <button type="button" class="btn btn-ghost" id="btn-prev" onclick="wizard.prev()" style="display: none;">&lt; Back</button>
+                        <div style="flex:1"></div>
+                        <button type="button" class="btn btn-terminal" id="btn-next" onclick="wizard.next()">Next &gt;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER (layouts/footer.html) ================= -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; background: var(--bg-terminal);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <div class="logo-box" style="width: 16px; height: 16px;"></div><span style="font-weight: 600;">Dewata Labs</span>
+            </div>
+            <div class="font-code text-muted" style="font-size: 0.8rem; display: flex; gap: 24px;">
+                <span>© 2026</span>
+                <span class="text-green">● Systems Operational</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT (js/main.js & js/project-wizard.js) ================= -->
+    <script src="js/main.js"></script>
+</body>
+</html>
