@@ -28,13 +28,19 @@ export default function Header() {
     <header
       className={solid ? "s" : ""}
       style={{
-        background: "rgba(10, 15, 29, 0.65)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
         position: "sticky",
         top: 0,
         zIndex: 50,
+        transition: "all 0.3s ease",
+        background: solid
+          ? "rgba(255, 255, 255, 0.92)"
+          : "rgba(255, 255, 255, 0.75)",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
+        borderBottom: solid
+          ? "1px solid rgba(15, 23, 42, 0.1)"
+          : "1px solid rgba(15, 23, 42, 0.06)",
+        boxShadow: solid ? "0 4px 20px rgba(15, 23, 42, 0.06)" : "none",
       }}
     >
       <div className="w hb">
@@ -45,14 +51,22 @@ export default function Header() {
           style={{
             display: "inline-flex",
             alignItems: "center",
-            background: "none",
+            flexShrink: 0,
+            background: "transparent",
             padding: 0,
+            textDecoration: "none",
           }}
         >
           <img
             src="/assets/brand/dewata-labs-logo.png"
             alt="Dewata Labs logo"
-            style={{ height: "38px", width: "auto", display: "block" }}
+            style={{
+              height: "32px",
+              width: "auto",
+              maxWidth: "180px",
+              objectFit: "contain",
+              display: "block",
+            }}
           />
         </Link>
 
@@ -80,7 +94,7 @@ export default function Header() {
           <Link
             className="btn p"
             to="/#contact"
-            style={{ padding: "9px 18px" }}
+            style={{ padding: "9px 18px", whiteSpace: "nowrap" }}
           >
             {t("talk")}
           </Link>
