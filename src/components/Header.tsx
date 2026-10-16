@@ -7,8 +7,8 @@ export default function Header() {
   useEffect(() => { const f = () => setSolid(scrollY > 30); addEventListener("scroll", f, { passive: true }); return () => removeEventListener("scroll", f); }, []);
   const items = ["/#home", "/#services", "/#about", "/#process", "/#portfolio", "/#contact"];
   return (
-    <header className={solid ? "s" : ""}><div className="w hb">
-      <Link className="logo" to="/#home" aria-label="Dewata Labs"><img src="/assets/brand/dewata-labs-logo.jpg" alt="Dewata Labs logo" width="34" height="46" /></Link>
+    <header className={solid ? "s" : ""} style={{ background: "rgba(10, 15, 29, 0.65)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)" }}><div className="w hb">
+      <Link className="logo" to="/#home" aria-label="Dewata Labs" style={{ background: "rgba(255, 255, 255, 0.9)", padding: "6px 12px", borderRadius: "10px", display: "inline-flex", alignItems: "center" }}><img src="/assets/brand/dewata-labs-logo.png" alt="Dewata Labs logo" style={{ height: "38px", width: "auto" }} /></Link>
       <nav className={open ? "o" : ""}>{items.map((h, i) => <Link key={h} to={h} onClick={() => setOpen(false)}>{t("n" + i)}</Link>)}</nav>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
         <div className="lang" role="group" aria-label="Language">{(["en", "id"] as const).map(l => <button key={l} aria-pressed={L === l} onClick={() => setL(l)}>{l.toUpperCase()}</button>)}</div>
