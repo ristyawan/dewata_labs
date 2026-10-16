@@ -61,7 +61,7 @@ export default function Header() {
             src="/assets/brand/dewata-labs-logo.png"
             alt="Dewata Labs logo"
             style={{
-              height: "94px",
+              height: "125px",
               width: "auto",
               maxWidth: "180px",
               objectFit: "contain",
