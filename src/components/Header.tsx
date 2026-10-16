@@ -40,12 +40,7 @@ export default function Header({
       }}
     >
       <div className="w hb">
-        <Link
-          className="logo"
-          to="/#home"
-          aria-label="Dewata Labs"
-          style={{ display: "inline-flex", alignItems: "center", background: "none", padding: 0 }}
-        >
+        <Link "center", "inline-flex", "none", 0 alignItems: aria-label="Dewata Labs" background: className="logo" display: padding: style="{{" to="/#home" }}>
           <img
             src="/assets/brand/dewata-labs-logo.png"
             alt="Dewata Labs logo"
@@ -54,7 +49,7 @@ export default function Header({
         </Link>
         <nav className={open ? "o" : ""}>
           {items.map((h, i) => (
-            <Link key={h} to={h} onClick={() => setOpen(false)}>
+            <Link key="{h}" onClick="{()" to="{h}"> setOpen(false)}>
               {t("n" + i)}
             </Link>
           ))}
@@ -67,7 +62,7 @@ export default function Header({
               </button>
             ))}
           </div>
-          <Link className="btn p" to="/#contact" style={{ padding: "9px 18px" }}>
+          <Link "9px 18px" className="btn p" padding: style="{{" to="/#contact" }}>
             {t("talk")}
           </Link>
           <button
