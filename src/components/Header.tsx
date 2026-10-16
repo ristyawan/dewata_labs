@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "../i18n/LangContext";
 
 export default function Header() {
-  const { lang, setL, t } = useLang();
+  const { L, setL, t } = useLang();
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -11,11 +11,18 @@ export default function Header() {
     const handleScroll = () => {
       setSolid(window.scrollY > 30);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const items = ["/#home", "/#services", "/#about", "/#process", "/#portfolio", "/#contact"];
+  const items = [
+    "/#home",
+    "/#services",
+    "/#about",
+    "/#process",
+    "/#portfolio",
+    "/#contact",
+  ];
 
   return (
     <header
@@ -35,7 +42,12 @@ export default function Header() {
           className="logo"
           to="/#home"
           aria-label="Dewata Labs"
-          style={{ display: "inline-flex", alignItems: "center", background: "none", padding: 0 }}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            background: "none",
+            padding: 0,
+          }}
         >
           <img
             src="/assets/brand/dewata-labs-logo.png"
@@ -43,6 +55,7 @@ export default function Header() {
             style={{ height: "38px", width: "auto", display: "block" }}
           />
         </Link>
+
         <nav className={open ? "o" : ""}>
           {items.map((h, i) => (
             <Link key={h} to={h} onClick={() => setOpen(false)}>
@@ -50,21 +63,28 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <div className="lang" role="group" aria-label="Language">
             {(["en", "id"] as const).map((item) => (
               <button
                 key={item}
-                aria-pressed={lang === item}
+                aria-pressed={L === item}
                 onClick={() => setL(item)}
               >
                 {item.toUpperCase()}
               </button>
             ))}
           </div>
-          <Link className="btn p" to="/#contact" style={{ padding: "9px 18px" }}>
+
+          <Link
+            className="btn p"
+            to="/#contact"
+            style={{ padding: "9px 18px" }}
+          >
             {t("talk")}
           </Link>
+
           <button
             className="ham"
             aria-label="Menu"
