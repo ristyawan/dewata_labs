@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ServicePage from './pages/ServicePage';
 import React from 'react';
-import LogoStorytelling3D from './components/LogoStorytelling3D';
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -28,7 +27,6 @@ export default function App() {
     <>
       <ScrollManager />
       <Header />
-      <LogoStorytelling3D />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/:slug" element={<ServicePage />} />
