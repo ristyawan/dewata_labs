@@ -1,9 +1,8 @@
-import { uselang } from "../i18n/LangContext";
+import { useLang } from "../i18n/LangContext";
 import { waLink } from "../lib/whatsapp";
 import WaIcon from "./WaIcon";
-
 export default function Footer() {
-  const { t } = uselang();
+  const { t } = useLang();
   return (
     <footer className="w">
       <span>&copy; 2026 Dewata Labs. Bali, Indonesia</span>
