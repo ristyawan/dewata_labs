@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
       <img className="pf" src="/assets/brand/hero-poster.jpg" alt="" aria-hidden="true" />
-      {!hide && <video className="video" ref={v} autoPlay muted loop playsInline preload="metadata" poster="/assets/brand/hero-poster.jpg" aria-hidden="true" onError={() => setHide(true)} />}
+      {!hide && <video className="video" src="/assets/brand/dewata-labs-banner.mp4" ref={v} autoPlay muted loop playsInline preload="metadata" poster="/assets/brand/hero-poster.jpg" aria-hidden="true" onError={() => setHide(true)} />}
       <div className="w">
         <h1>{t("h1")}</h1>
         <p className="lead">{t("hls")}</p>
